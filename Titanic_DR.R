@@ -16,10 +16,10 @@ titanic_original$age[is.na(titanic_original$age)] <- mean(titanic_original$age, 
 titanic_original$boat <- as.character(titanic_original$boat)
 titanic_original$boat[is.na(titanic_original$boat)]<- "None"
 
-# Passengers w/ and w/o cabin
+# Create binary variable has_cabin_number to keep track of passengers w/ and w/o cabin numbers
 
 titanic_original$has_cabin_number <- ifelse(is.na(titanic_original$cabin),"0","1")
 
-# Write csv file
+# Write cleaned up csv file
 
 write.csv(titanic_original, file = "titanic_clean.csv")
